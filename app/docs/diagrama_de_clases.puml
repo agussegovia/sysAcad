@@ -11,7 +11,6 @@ package "Sistema Académico"{
             - sexo: str
             - nroLegajo: int
             - fechaIngreso: date
-            - id_rol: str
         }
 
         enum TipoDocumento {
@@ -42,10 +41,9 @@ package "Sistema Académico"{
 
     class Autoridad {
         -nombre: str
-        -cargo: str
+        -cargo: Cargo
         -telefono: str
         -email: str
-        - id_rol: str
     }
 
     class Area {
@@ -60,7 +58,7 @@ package "Sistema Académico"{
 
     class TipoEspecialidad {
         - nombre: str
-        - Nivel: int
+        - Nivel: str
     }
 
     class Grupo {
@@ -85,7 +83,6 @@ package "Sistema Académico"{
     class Cargo {
         - nombre: str
         - puntos: int
-        
     }
     
     class CategoriaCargo {
@@ -94,10 +91,8 @@ package "Sistema Académico"{
    
     class Materia {
         - nombre: str
-        - codigo: int
+        - codigo: str
         - observacion: str
-        - correlativas_cursadas: str
-        - correlativas_aprobadas: str 
     }
 
     class TipoDedicacion {
@@ -109,11 +104,6 @@ package "Sistema Académico"{
         - nombre: str
     }
 
-    class Rol {
-        - id_rol: int
-        - descripcion_rol: str
-    }
-
 
     Orientacion -- Especialidad
     Orientacion -- Plan
@@ -123,7 +113,5 @@ package "Sistema Académico"{
     Facultad -- Universidad
     Cargo -- CategoriaCargo
     Cargo -- TipoDedicacion
-    Personas -- Rol
-    Autoridad -- Rol 
 }
 @enduml

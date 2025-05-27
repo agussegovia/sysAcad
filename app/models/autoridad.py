@@ -7,3 +7,4 @@ class Autoridad():
     cargo: Cargo
     telefono: str 
     email: str
+    tipo_dedicacion: str

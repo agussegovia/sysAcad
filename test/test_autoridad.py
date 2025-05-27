@@ -29,6 +29,7 @@ class AutoridadTestCase(unittest.TestCase):
         cargo.categoria_cargo.nombre = "Categoria 1"
         tipo_dedicacion.nombre = "Dedicación 1"
         tipo_dedicacion.observacion = "Observación de prueba"
+        autoridad.tipo_dedicacion = tipo_dedicacion  # Asignación correcta
         self.assertIsNotNone(autoridad)
         self.assertEqual(autoridad.nombre, "Juan Pérez")
         self.assertIsNotNone(autoridad.cargo)

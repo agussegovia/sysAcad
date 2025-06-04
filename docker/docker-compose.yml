@@ -1,10 +1,10 @@
 services:
     estructura:
-        image: flask-sysacad:v1.0.0
+        build: ..
         networks:
           - mired
         ports:
-          - 5000:5000
+          - 5432:5432
         environment:
           - FLASK_CONTEXT=${FLASK_CONTEXT}
           - SQLALCHEMY_TRACK_MODIFICATIONS=${SQLALCHEMY_TRACK_MODIFICATIONS}  
